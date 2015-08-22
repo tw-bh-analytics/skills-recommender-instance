@@ -1,0 +1,6 @@
+site "https://supermarket.getchef.com/api/v1"
+
+cookbook "java"
+cookbook "apt"
+
+cookbook "basement", path: "site-cookbooks/basement"

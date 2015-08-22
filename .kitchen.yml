@@ -1,0 +1,21 @@
+---
+provisioner:
+  name: chef_solo
+
+driver:
+  name: vagrant
+  box_download_insecure: true
+  network:
+    - [ "forwarded_port", {guest: 8080, host: 80, auto_correct: true} ]
+    - [ "private_network", {ip: "192.168.192.169"} ]
+  customize:
+    memory: 2048
+    cpuexecutioncap: 40
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: skills_recommender
+    run_list:
+      - recipe[basement]

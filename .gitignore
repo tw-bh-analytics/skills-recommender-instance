@@ -1,0 +1,4 @@
+.librarian/
+.kitchen/
+tmp/
+*.swp
