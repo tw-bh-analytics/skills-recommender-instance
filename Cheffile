@@ -7,3 +7,4 @@ cookbook "maven"
 
 cookbook "nginx", path: "site-cookbooks/nginx"
 cookbook "basement", path: "site-cookbooks/basement"
+cookbook "application", path: "site-cookbooks/application"

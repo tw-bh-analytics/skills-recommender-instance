@@ -19,3 +19,4 @@ suites:
   - name: skills_recommender
     run_list:
       - recipe[basement]
+      - recipe[application]
