@@ -2,8 +2,10 @@ site "https://supermarket.getchef.com/api/v1"
 
 cookbook "java"
 cookbook "apt"
+cookbook "build-essential"
 cookbook "git"
 cookbook "maven"
+cookbook "nodejs"
 
 cookbook "nginx", path: "site-cookbooks/nginx"
 cookbook "basement", path: "site-cookbooks/basement"
