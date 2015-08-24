@@ -2,3 +2,4 @@
 .kitchen/
 tmp/
 *.swp
+data/
