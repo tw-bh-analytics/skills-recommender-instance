@@ -7,6 +7,8 @@ driver:
   box_download_insecure: true
   synced_folders:
     - [ 'data', '/opt/data' ]
+    - [ '../skills-recommender', '/opt/skills-recommender' ]
+    - [ '../skills-recommender-ui', '/opt/skills-recommender-ui' ]
   network:
     - [ "forwarded_port", {guest: 8080, host: 80, auto_correct: true} ]
     - [ "private_network", {ip: "192.168.192.169"} ]
@@ -22,3 +24,5 @@ suites:
     run_list:
       - recipe[basement]
       - recipe[application]
+    attributes:
+      code_strategy: symlink

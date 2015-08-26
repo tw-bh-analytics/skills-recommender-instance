@@ -2,6 +2,7 @@ git '/opt/skills-recommender' do
   repository 'https://github.com/tw-bh-analytics/skills-recommender.git'
   revision 'master'
   action :sync
+  only_if node['code_strategy'].eql? 'scm'
   notifies :restart, 'service[skills-recommender]', :delayed
 end
 
@@ -9,6 +10,7 @@ git '/opt/skills-recommender-ui' do
   repository 'https://github.com/tw-bh-analytics/skills-recommender-ui.git'
   revision 'master'
   action :sync
+  only_if node['code_strategy'].eql? 'scm'
   notifies :run, 'execute[skills-recommender-ui-build]', :delayed
   notifies :create, 'cookbook_file[/opt/skills-recommender-ui/build-ui.sh]', :immediately
 end
@@ -45,5 +47,5 @@ execute 'skills-recommender-ui-build' do
   command '/opt/skills-recommender-ui/build-ui.sh'
   user 'root'
   group 'root'
-  action :run
+  action :nothing
 end
