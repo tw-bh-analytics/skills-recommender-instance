@@ -1,6 +1,6 @@
 site "https://supermarket.getchef.com/api/v1"
 
-cookbook "java"
+cookbook "java", path: "site-cookbooks/java"
 cookbook "apt"
 cookbook "build-essential"
 cookbook "git"
