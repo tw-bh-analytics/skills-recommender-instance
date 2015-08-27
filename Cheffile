@@ -6,6 +6,7 @@ cookbook "build-essential"
 cookbook "git"
 cookbook "maven"
 cookbook "nodejs"
+cookbook "mysql"
 
 cookbook "nginx", path: "site-cookbooks/nginx"
 cookbook "basement", path: "site-cookbooks/basement"

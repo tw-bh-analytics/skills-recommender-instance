@@ -8,3 +8,8 @@ default['nodejs']['npm_packages'] = [
   { 'name' => 'gulp' },
   { 'name' => 'bower' }
 ]
+
+default['mysql']['root']['password'] = 'G00d1'
+default['mysql']['app']['user'] = 'app'
+default['mysql']['app']['password'] = 'ApP!'
+
