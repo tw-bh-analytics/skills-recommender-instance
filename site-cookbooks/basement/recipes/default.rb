@@ -22,7 +22,7 @@ mysql_client 'default' do
 end
 
 execute "add-mysql-user" do
-  command "/usr/bin/mysql -h 127.0.0.1 -u root -D mysql -p#{node['mysql']['root']['password']} -r -B -N -e \"CREATE USER '#{node['mysql']['app']['user']}'@'%' IDENTIFIED BY '#{node['mysql']['app']['password']}'\""
+  command "/usr/bin/mysql -h 127.0.0.1 -u root -D mysql -p#{node['mysql']['root']['password']} -r -B -N -e \"GRANT ALL PRIVILEGES ON *.* TO '#{node['mysql']['app']['user']}'@'%' IDENTIFIED BY '#{node['mysql']['app']['password']}'\""
   action :run
   only_if { `/usr/bin/mysql -h 127.0.0.1 -u root -D mysql -p#{node['mysql']['root']['password']} -r -B -N -e \"SELECT COUNT(*) FROM user where User='#{node['mysql']['app']['user']}'\"`.to_i == 0 }
 end
